@@ -13,17 +13,21 @@
 		18EF22B61F677B2F0005781B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EF22B41F677B2F0005781B /* Main.storyboard */; };
 		18EF22B81F677B2F0005781B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EF22B71F677B2F0005781B /* Assets.xcassets */; };
 		18EF22BB1F677B2F0005781B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EF22B91F677B2F0005781B /* LaunchScreen.storyboard */; };
+		18EF22C31F677EDB0005781B /* presidents.json in Resources */ = {isa = PBXBuildFile; fileRef = 18EF22C21F677EDB0005781B /* presidents.json */; };
+		18EF22C51F678F570005781B /* LanguageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF22C41F678F570005781B /* LanguageListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18EF22AB1F677B2F0005781B /* AnotherIPadApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotherIPadApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EF22AE1F677B2F0005781B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18EF22B01F677B2F0005781B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		18EF22B01F677B2F0005781B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		18EF22B21F677B2F0005781B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18EF22B51F677B2F0005781B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18EF22B71F677B2F0005781B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18EF22BA1F677B2F0005781B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18EF22BC1F677B2F0005781B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18EF22C21F677EDB0005781B /* presidents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = presidents.json; sourceTree = "<group>"; };
+		18EF22C41F678F570005781B /* LanguageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				18EF22AE1F677B2F0005781B /* AppDelegate.swift */,
 				18EF22B01F677B2F0005781B /* MasterViewController.swift */,
+				18EF22C41F678F570005781B /* LanguageListController.swift */,
 				18EF22B21F677B2F0005781B /* DetailViewController.swift */,
+				18EF22C21F677EDB0005781B /* presidents.json */,
 				18EF22B41F677B2F0005781B /* Main.storyboard */,
 				18EF22B71F677B2F0005781B /* Assets.xcassets */,
 				18EF22B91F677B2F0005781B /* LaunchScreen.storyboard */,
@@ -94,11 +100,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = apple;
 				TargetAttributes = {
 					18EF22AA1F677B2F0005781B = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -126,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EF22C31F677EDB0005781B /* presidents.json in Resources */,
 				18EF22BB1F677B2F0005781B /* LaunchScreen.storyboard in Resources */,
 				18EF22B81F677B2F0005781B /* Assets.xcassets in Resources */,
 				18EF22B61F677B2F0005781B /* Main.storyboard in Resources */,
@@ -142,6 +150,7 @@
 				18EF22B31F677B2F0005781B /* DetailViewController.swift in Sources */,
 				18EF22B11F677B2F0005781B /* MasterViewController.swift in Sources */,
 				18EF22AF1F677B2F0005781B /* AppDelegate.swift in Sources */,
+				18EF22C51F678F570005781B /* LanguageListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +186,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -185,7 +196,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -227,7 +242,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -235,7 +252,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -268,7 +289,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmitriipoliakov.AnotherIPadApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -280,7 +303,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmitriipoliakov.AnotherIPadApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -303,6 +328,7 @@
 				18EF22C11F677B2F0005781B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

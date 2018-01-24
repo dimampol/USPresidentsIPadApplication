@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  AnotherIPadApplication
 //
-//  Created by apple on 2017-09-11.
+//  Created by Dmitrii Poliakov on 2017-09-11.
 //  Copyright © 2017 apple. All rights reserved.
 //
 

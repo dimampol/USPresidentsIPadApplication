@@ -2,7 +2,7 @@
 //  MasterViewController.swift
 //  AnotherIPadApplication
 //
-//  Created by apple on 2017-09-11.
+//  Created by Dmitrii Poliakov on 2017-09-11.
 //  Copyright © 2017 apple. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var objects = [Dictionary<String, Any>]()
 
 
     override func viewDidLoad() {
@@ -25,6 +25,29 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        guard let path = Bundle.main.path(forResource: "presidents", ofType: "json") else{
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        
+        do{
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            
+            if let dict = json as? [String: Any]{
+                if let presidentsData = dict["items"] as? [Any]{
+                    for item in presidentsData{
+                        objects.append(item as! [String : Any])
+                    }
+                    tableView.reloadData()
+                }
+            }
+        }
+        catch{
+            print(error)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +60,8 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
+    @objc func insertNewObject(_ sender: Any) {
+        
     }
 
     // MARK: - Segues
@@ -48,9 +69,9 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.detailItem = object["url"] as? String
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -70,8 +91,8 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] 
+        cell.textLabel!.text = object["label"] as? String
         return cell
     }
 
